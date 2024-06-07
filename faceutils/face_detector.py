@@ -6,9 +6,7 @@ from .distance import euclidean_distance
 _base_dir = os.path.dirname(__file__)
 
 _detector = dlib.get_frontal_face_detector()
-_predictor = dlib.shape_predictor(
-    os.path.join(os.path.join(_base_dir, "data"),
-                 "shape_predictor_68_face_landmarks.dat")
+_predictor = dlib.shape_predictor("/kaggle/input/modelfiles/shape_predictor_68_face_landmarks.dat")
 )
 _recognizer = dlib.face_recognition_model_v1(
     os.path.join(os.path.join(_base_dir, "data"),
